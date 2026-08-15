@@ -1,101 +1,66 @@
-* {
-	box-sizing: border-box;
-}
+IMKAS SITE V2
+=============
 
-html,
-body {
-	margin: 0;
-	min-height: 100%;
-}
+This version adds:
+- An image slot to every project card
+- A left-side menu button
+- Separate pages for Home, LegendsRPG, ProjectFlint, and Flint Quests
+- A screenshot gallery on each project page
 
-body {
-	background: #000;
-	color: #fff;
-	font-family: Arial, Helvetica, sans-serif;
-}
+UPLOAD/REPLACE THESE FILES
+--------------------------
+index.html
+style.css
+script.js
+legendsrpg.html
+projectflint.html
+flint-quests.html
+assets/github.png
+assets/discord.png
+assets/projects/legendsrpg.png
+assets/projects/projectflint.png
+assets/projects/flint-quests.png
 
-.site {
-	width: min(1100px, 92%);
-	margin: 0 auto;
-	padding: 64px 0;
-}
+ADDING YOUR OWN PROJECT IMAGE
+-----------------------------
+Replace one of these files with your own PNG:
+assets/projects/legendsrpg.png
+assets/projects/projectflint.png
+assets/projects/flint-quests.png
 
-.header {
-	text-align: center;
-	margin-bottom: 56px;
-}
+Keep the exact filename and GitHub Pages will automatically use it.
 
-.header h1 {
-	margin: 0;
-	padding-bottom: 16px;
-	border-bottom: 1px solid #fff;
-	font-size: 2rem;
-	font-weight: 500;
-}
+A 16:9 image works best, for example:
+1920x1080
+1280x720
+960x540
 
-.projects {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 24px;
-}
+ADDING MORE SCREENSHOTS
+-----------------------
+You can upload extra files into assets/projects/, for example:
 
-.project-card {
-	min-height: 260px;
-	border: 1px solid #fff;
-	padding: 24px;
-	display: flex;
-	flex-direction: column;
-}
+assets/projects/flint-1.png
+assets/projects/flint-2.png
+assets/projects/flint-3.png
 
-.project-card h2 {
-	margin: 0 0 18px;
-	font-size: 1.45rem;
-	font-weight: 500;
-}
+Then in projectflint.html replace:
 
-.project-card p {
-	margin: 0;
-	line-height: 1.5;
-	color: #d8d8d8;
-}
+<img src="assets/projects/projectflint.png" ...>
 
-.project-links {
-	display: flex;
-	gap: 16px;
-	margin-top: auto;
-	padding-top: 28px;
-}
+inside the gallery with:
 
-.project-links a {
-	width: 44px;
-	height: 44px;
-	border: 1px solid #fff;
-	display: grid;
-	place-items: center;
-	text-decoration: none;
-	transition:
-		background 120ms ease,
-		transform 120ms ease;
-}
+<img src="assets/projects/flint-1.png" alt="ProjectFlint screenshot">
+<img src="assets/projects/flint-2.png" alt="ProjectFlint screenshot">
+<img src="assets/projects/flint-3.png" alt="ProjectFlint screenshot">
 
-.project-links a:hover {
-	background: #1a1a1a;
-	transform: translateY(-2px);
-}
+THE SIDE BUTTON
+---------------
+script.js controls opening/closing the menu.
+The actual links are inside every HTML file in:
 
-.project-links img {
-	width: 26px;
-	height: 26px;
-	object-fit: contain;
-	image-rendering: auto;
-}
+<aside class="side-menu" id="sideMenu">
 
-@media (max-width: 800px) {
-	.projects {
-		grid-template-columns: 1fr;
-	}
+If you add another page later, add another:
+<a href="new-page.html">New Page</a>
 
-	.project-card {
-		min-height: 210px;
-	}
-}
+to that menu in each HTML file.
