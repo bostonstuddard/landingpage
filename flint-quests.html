@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Flint Quests — imkas</title>
-	<link rel="stylesheet" href="style.css">
-	<script src="script.js" defer></script>
+	<link rel="stylesheet" href="style.css?v=4">
+	<script src="script.js?v=2" defer></script>
 </head>
 <body>
 
@@ -14,15 +14,16 @@
 </button>
 
 <aside class="side-menu" id="sideMenu">
-	<div class="side-menu-title">pages</div>
-	<a href="index.html">home</a>
+	<div class="side-menu-title">Pages</div>
+	<a href="index.html">Home</a>
 	<a href="legendsrpg.html">LegendsRPG</a>
 	<a href="projectflint.html">ProjectFlint</a>
-	<a href="flint-quests.html">Flint Quests</a>
+	<a href="flint-quests.html" class="active" aria-current="page">Flint Quests</a>
+	<a href="about.html">About / Contact</a>
+	<a href="privacy.html">Privacy</a>
 </aside>
 
 <div class="menu-backdrop" id="menuBackdrop"></div>
-
 <main class="site project-page">
 	<header class="header">
 		<h1><a href="index.html">imkas</a></h1>
@@ -34,17 +35,15 @@
 		<p>A simple in-game quest system for Minecraft.</p>
 
 		<div class="detail-links">
-			<a href="#"><img src="assets/github.png" alt=""> GitHub</a>
-			<a href="#"><img src="assets/discord.png" alt=""> Discord</a>
-		</div>
-
-		<h3>Screenshots</h3>
-		<div class="gallery">
-			<img src="assets/projects/flint-quests.png" alt="Flint Quests screenshot">
-			<img src="assets/projects/flint-quests.png" alt="Flint Quests screenshot">
-			<img src="assets/projects/flint-quests.png" alt="Flint Quests screenshot">
+			<a href="https://discord.gg/GePdW2E93T" target="_blank" rel="noopener noreferrer"><img src="assets/discord.png" alt=""> Discord</a>
+			<span class="unavailable-link">GitHub — not available yet</span>
 		</div>
 	</article>
+<footer class="site-footer">
+	<a href="about.html">About / Contact</a>
+	<span>·</span>
+	<a href="privacy.html">Privacy</a>
+</footer>
 </main>
 </body>
 </html>

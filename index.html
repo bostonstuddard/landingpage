@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>imkas</title>
-	<link rel="stylesheet" href="style.css">
-	<script src="script.js" defer></script>
+	<link rel="stylesheet" href="style.css?v=4">
+	<script src="script.js?v=2" defer></script>
 </head>
 <body>
 
@@ -14,15 +14,16 @@
 </button>
 
 <aside class="side-menu" id="sideMenu">
-	<div class="side-menu-title">pages</div>
-	<a href="index.html">home</a>
+	<div class="side-menu-title">Pages</div>
+	<a href="index.html" class="active" aria-current="page">Home</a>
 	<a href="legendsrpg.html">LegendsRPG</a>
 	<a href="projectflint.html">ProjectFlint</a>
 	<a href="flint-quests.html">Flint Quests</a>
+	<a href="about.html">About / Contact</a>
+	<a href="privacy.html">Privacy</a>
 </aside>
 
 <div class="menu-backdrop" id="menuBackdrop"></div>
-
 <main class="site">
 	<header class="header">
 		<h1>imkas</h1>
@@ -31,25 +32,29 @@
 	<section class="projects">
 		<article class="project-card">
 			<a class="project-image-link" href="legendsrpg.html">
-				<img class="project-image" src="assets/projects/legendsrpg.png" alt="LegendsRPG">
+				<img class="project-image" src="assets/projects/legendsrpg-screenshot.png" alt="LegendsRPG">
 			</a>
 			<h2><a href="legendsrpg.html">LegendsRPG</a></h2>
 			<p>My RPG project.</p>
-			<div class="project-links">
-				<a href="#" aria-label="LegendsRPG GitHub" title="GitHub"><img src="assets/github.png" alt=""></a>
-				<a href="#" aria-label="LegendsRPG Discord" title="Discord"><img src="assets/discord.png" alt=""></a>
+			<div class="project-links compact-links">
+				<a class="icon-link" href="https://discord.gg/gu2Hdd2R8X" target="_blank" rel="noopener noreferrer" aria-label="LegendsRPG Discord" title="Discord"><img src="assets/discord.png" alt=""></a>
+				<a class="text-link" href="https://sites.google.com/view/legendsrpg/home" target="_blank" rel="noopener noreferrer">Website</a>
+				<a class="text-link" href="https://legendsrpg.wiki.gg/wiki/LegendsRPG_Wiki" target="_blank" rel="noopener noreferrer">Wiki</a>
+				<a class="text-link" href="https://youtu.be/hlro2AvAm7s" target="_blank" rel="noopener noreferrer">Trailer</a>
 			</div>
 		</article>
 
 		<article class="project-card">
-			<a class="project-image-link" href="projectflint.html">
-				<img class="project-image" src="assets/projects/projectflint.png" alt="ProjectFlint">
+			<a class="project-image-link project-logo-frame" href="projectflint.html">
+				<img class="project-image project-logo-image" src="assets/projects/projectflint-logo.png" alt="ProjectFlint logo">
 			</a>
 			<h2><a href="projectflint.html">ProjectFlint</a></h2>
 			<p>A primitive survival overhaul for Minecraft.</p>
-			<div class="project-links">
-				<a href="#" aria-label="ProjectFlint GitHub" title="GitHub"><img src="assets/github.png" alt=""></a>
-				<a href="#" aria-label="ProjectFlint Discord" title="Discord"><img src="assets/discord.png" alt=""></a>
+			<div class="project-links compact-links">
+				<a class="icon-link github-link" href="https://github.com/bostonstuddard/ProjectFlint" target="_blank" rel="noopener noreferrer" aria-label="ProjectFlint GitHub" title="GitHub"><img src="assets/github.png" alt=""></a>
+				<a class="icon-link" href="https://discord.gg/GePdW2E93T" target="_blank" rel="noopener noreferrer" aria-label="ProjectFlint Discord" title="Discord"><img src="assets/discord.png" alt=""></a>
+				<a class="text-link" href="https://modrinth.com/mod/projectflint" target="_blank" rel="noopener noreferrer">Modrinth</a>
+				<a class="text-link" href="https://www.curseforge.com/minecraft/mc-mods/projectflint/preview" target="_blank" rel="noopener noreferrer">CurseForge</a>
 			</div>
 		</article>
 
@@ -59,12 +64,16 @@
 			</a>
 			<h2><a href="flint-quests.html">Flint Quests</a></h2>
 			<p>A simple in-game quest system for Minecraft.</p>
-			<div class="project-links">
-				<a href="#" aria-label="Flint Quests GitHub" title="GitHub"><img src="assets/github.png" alt=""></a>
-				<a href="#" aria-label="Flint Quests Discord" title="Discord"><img src="assets/discord.png" alt=""></a>
+			<div class="project-links compact-links">
+				<a class="icon-link" href="https://discord.gg/GePdW2E93T" target="_blank" rel="noopener noreferrer" aria-label="Flint Quests Discord" title="Discord"><img src="assets/discord.png" alt=""></a>
 			</div>
 		</article>
 	</section>
+<footer class="site-footer">
+	<a href="about.html">About / Contact</a>
+	<span>·</span>
+	<a href="privacy.html">Privacy</a>
+</footer>
 </main>
 </body>
 </html>
