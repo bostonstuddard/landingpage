@@ -508,3 +508,26 @@ a {
 		font-size: 0.82rem;
 	}
 }
+
+
+/* External project service icons */
+.project-links .icon-link img,
+.detail-links img {
+	object-fit: contain;
+}
+
+.project-links .icon-link img[src$="youtube.webp"],
+.detail-links img[src$="youtube.webp"] {
+	width: 28px;
+	height: 24px;
+}
+
+.project-links .icon-link img[src$="wiki.svg"],
+.detail-links img[src$="wiki.svg"],
+.project-links .icon-link img[src$="modrinth.png"],
+.detail-links img[src$="modrinth.png"],
+.project-links .icon-link img[src$="curseforge.svg"],
+.detail-links img[src$="curseforge.svg"] {
+	width: 25px;
+	height: 25px;
+}
