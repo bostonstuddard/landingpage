@@ -1,50 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>ProjectFlint — imkas</title>
-	<link rel="stylesheet" href="style.css">
-	<script src="script.js" defer></script>
-</head>
-<body>
+const menuButton = document.getElementById("menuButton");
+const sideMenu = document.getElementById("sideMenu");
+const menuBackdrop = document.getElementById("menuBackdrop");
 
-<button class="menu-button" id="menuButton" aria-label="Open page menu" aria-expanded="false">
-	<span></span><span></span><span></span>
-</button>
+function setMenu(open) {
+	sideMenu.classList.toggle("open", open);
+	menuBackdrop.classList.toggle("open", open);
+	menuButton.setAttribute("aria-expanded", String(open));
+}
 
-<aside class="side-menu" id="sideMenu">
-	<div class="side-menu-title">pages</div>
-	<a href="index.html">home</a>
-	<a href="legendsrpg.html">LegendsRPG</a>
-	<a href="projectflint.html">ProjectFlint</a>
-	<a href="flint-quests.html">Flint Quests</a>
-</aside>
+menuButton.addEventListener("click", () => {
+	setMenu(!sideMenu.classList.contains("open"));
+});
 
-<div class="menu-backdrop" id="menuBackdrop"></div>
+menuBackdrop.addEventListener("click", () => {
+	setMenu(false);
+});
 
-<main class="site project-page">
-	<header class="header">
-		<h1><a href="index.html">imkas</a></h1>
-	</header>
-
-	<article class="project-detail">
-		<img class="hero-image" src="assets/projects/projectflint.png" alt="ProjectFlint">
-		<h2>ProjectFlint</h2>
-		<p>A primitive survival overhaul for Minecraft.</p>
-
-		<div class="detail-links">
-			<a href="#"><img src="assets/github.png" alt=""> GitHub</a>
-			<a href="#"><img src="assets/discord.png" alt=""> Discord</a>
-		</div>
-
-		<h3>Screenshots</h3>
-		<div class="gallery">
-			<img src="assets/projects/projectflint.png" alt="ProjectFlint screenshot">
-			<img src="assets/projects/projectflint.png" alt="ProjectFlint screenshot">
-			<img src="assets/projects/projectflint.png" alt="ProjectFlint screenshot">
-		</div>
-	</article>
-</main>
-</body>
-</html>
+document.addEventListener("keydown", (event) => {
+	if (event.key === "Escape") {
+		setMenu(false);
+	}
+});

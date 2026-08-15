@@ -1,66 +1,271 @@
-IMKAS SITE V2
-=============
+* {
+	box-sizing: border-box;
+}
 
-This version adds:
-- An image slot to every project card
-- A left-side menu button
-- Separate pages for Home, LegendsRPG, ProjectFlint, and Flint Quests
-- A screenshot gallery on each project page
+html,
+body {
+	margin: 0;
+	min-height: 100%;
+}
 
-UPLOAD/REPLACE THESE FILES
---------------------------
-index.html
-style.css
-script.js
-legendsrpg.html
-projectflint.html
-flint-quests.html
-assets/github.png
-assets/discord.png
-assets/projects/legendsrpg.png
-assets/projects/projectflint.png
-assets/projects/flint-quests.png
+body {
+	background: #000;
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+}
 
-ADDING YOUR OWN PROJECT IMAGE
------------------------------
-Replace one of these files with your own PNG:
-assets/projects/legendsrpg.png
-assets/projects/projectflint.png
-assets/projects/flint-quests.png
+a {
+	color: inherit;
+}
 
-Keep the exact filename and GitHub Pages will automatically use it.
+.site {
+	width: min(1100px, 92%);
+	margin: 0 auto;
+	padding: 64px 0;
+}
 
-A 16:9 image works best, for example:
-1920x1080
-1280x720
-960x540
+.header {
+	text-align: center;
+	margin-bottom: 52px;
+}
 
-ADDING MORE SCREENSHOTS
------------------------
-You can upload extra files into assets/projects/, for example:
+.header h1 {
+	margin: 0;
+	padding-bottom: 16px;
+	border-bottom: 1px solid #fff;
+	font-size: 2rem;
+	font-weight: 500;
+}
 
-assets/projects/flint-1.png
-assets/projects/flint-2.png
-assets/projects/flint-3.png
+.header h1 a {
+	text-decoration: none;
+}
 
-Then in projectflint.html replace:
+.projects {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 24px;
+}
 
-<img src="assets/projects/projectflint.png" ...>
+.project-card {
+	border: 1px solid #fff;
+	padding: 18px;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+}
 
-inside the gallery with:
+.project-image-link {
+	display: block;
+	margin-bottom: 18px;
+}
 
-<img src="assets/projects/flint-1.png" alt="ProjectFlint screenshot">
-<img src="assets/projects/flint-2.png" alt="ProjectFlint screenshot">
-<img src="assets/projects/flint-3.png" alt="ProjectFlint screenshot">
+.project-image {
+	display: block;
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	border: 1px solid #666;
+}
 
-THE SIDE BUTTON
----------------
-script.js controls opening/closing the menu.
-The actual links are inside every HTML file in:
+.project-card h2 {
+	margin: 0 0 12px;
+	font-size: 1.35rem;
+	font-weight: 500;
+}
 
-<aside class="side-menu" id="sideMenu">
+.project-card h2 a {
+	text-decoration: none;
+}
 
-If you add another page later, add another:
-<a href="new-page.html">New Page</a>
+.project-card h2 a:hover {
+	text-decoration: underline;
+}
 
-to that menu in each HTML file.
+.project-card p {
+	margin: 0;
+	line-height: 1.5;
+	color: #d8d8d8;
+}
+
+.project-links {
+	display: flex;
+	gap: 14px;
+	margin-top: auto;
+	padding-top: 28px;
+}
+
+.project-links a {
+	width: 44px;
+	height: 44px;
+	border: 1px solid #fff;
+	display: grid;
+	place-items: center;
+	text-decoration: none;
+	transition: transform 120ms ease, background 120ms ease;
+}
+
+.project-links a:hover {
+	background: #171717;
+	transform: translateY(-2px);
+}
+
+.project-links img {
+	width: 26px;
+	height: 26px;
+	object-fit: contain;
+}
+
+/* small button on the left */
+.menu-button {
+	position: fixed;
+	left: 18px;
+	top: 24px;
+	z-index: 30;
+	width: 48px;
+	height: 48px;
+	padding: 11px;
+	border: 1px solid #fff;
+	background: #000;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.menu-button span {
+	display: block;
+	height: 2px;
+	width: 100%;
+	background: #fff;
+}
+
+.side-menu {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 25;
+	width: 250px;
+	padding: 92px 20px 20px;
+	border-right: 1px solid #fff;
+	background: #050505;
+	transform: translateX(-100%);
+	transition: transform 160ms ease;
+}
+
+.side-menu.open {
+	transform: translateX(0);
+}
+
+.side-menu-title {
+	margin-bottom: 18px;
+	color: #999;
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+}
+
+.side-menu a {
+	display: block;
+	padding: 12px 10px;
+	margin-bottom: 6px;
+	border: 1px solid transparent;
+	text-decoration: none;
+}
+
+.side-menu a:hover {
+	border-color: #fff;
+}
+
+.menu-backdrop {
+	position: fixed;
+	inset: 0;
+	z-index: 20;
+	background: rgba(0, 0, 0, 0.65);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 160ms ease;
+}
+
+.menu-backdrop.open {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+/* Individual project pages */
+.project-detail {
+	max-width: 920px;
+	margin: 0 auto;
+}
+
+.hero-image {
+	display: block;
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	border: 1px solid #fff;
+}
+
+.project-detail h2 {
+	font-size: 2rem;
+	font-weight: 500;
+	margin: 28px 0 12px;
+}
+
+.project-detail p {
+	color: #d8d8d8;
+	line-height: 1.65;
+}
+
+.detail-links {
+	display: flex;
+	gap: 12px;
+	margin: 24px 0 42px;
+}
+
+.detail-links a {
+	border: 1px solid #fff;
+	padding: 10px 14px;
+	display: inline-flex;
+	align-items: center;
+	gap: 9px;
+	text-decoration: none;
+}
+
+.detail-links img {
+	width: 24px;
+	height: 24px;
+}
+
+.project-detail h3 {
+	font-weight: 500;
+	margin-bottom: 16px;
+}
+
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 12px;
+}
+
+.gallery img {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	border: 1px solid #555;
+}
+
+@media (max-width: 800px) {
+	.site {
+		padding-top: 90px;
+	}
+
+	.projects {
+		grid-template-columns: 1fr;
+	}
+
+	.gallery {
+		grid-template-columns: 1fr;
+	}
+}

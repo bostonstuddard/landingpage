@@ -1,50 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>LegendsRPG — imkas</title>
-	<link rel="stylesheet" href="style.css">
-	<script src="script.js" defer></script>
-</head>
-<body>
+IMKAS SITE V2
+=============
 
-<button class="menu-button" id="menuButton" aria-label="Open page menu" aria-expanded="false">
-	<span></span><span></span><span></span>
-</button>
+This version adds:
+- An image slot to every project card
+- A left-side menu button
+- Separate pages for Home, LegendsRPG, ProjectFlint, and Flint Quests
+- A screenshot gallery on each project page
+
+UPLOAD/REPLACE THESE FILES
+--------------------------
+index.html
+style.css
+script.js
+legendsrpg.html
+projectflint.html
+flint-quests.html
+assets/github.png
+assets/discord.png
+assets/projects/legendsrpg.png
+assets/projects/projectflint.png
+assets/projects/flint-quests.png
+
+ADDING YOUR OWN PROJECT IMAGE
+-----------------------------
+Replace one of these files with your own PNG:
+assets/projects/legendsrpg.png
+assets/projects/projectflint.png
+assets/projects/flint-quests.png
+
+Keep the exact filename and GitHub Pages will automatically use it.
+
+A 16:9 image works best, for example:
+1920x1080
+1280x720
+960x540
+
+ADDING MORE SCREENSHOTS
+-----------------------
+You can upload extra files into assets/projects/, for example:
+
+assets/projects/flint-1.png
+assets/projects/flint-2.png
+assets/projects/flint-3.png
+
+Then in projectflint.html replace:
+
+<img src="assets/projects/projectflint.png" ...>
+
+inside the gallery with:
+
+<img src="assets/projects/flint-1.png" alt="ProjectFlint screenshot">
+<img src="assets/projects/flint-2.png" alt="ProjectFlint screenshot">
+<img src="assets/projects/flint-3.png" alt="ProjectFlint screenshot">
+
+THE SIDE BUTTON
+---------------
+script.js controls opening/closing the menu.
+The actual links are inside every HTML file in:
 
 <aside class="side-menu" id="sideMenu">
-	<div class="side-menu-title">pages</div>
-	<a href="index.html">home</a>
-	<a href="legendsrpg.html">LegendsRPG</a>
-	<a href="projectflint.html">ProjectFlint</a>
-	<a href="flint-quests.html">Flint Quests</a>
-</aside>
 
-<div class="menu-backdrop" id="menuBackdrop"></div>
+If you add another page later, add another:
+<a href="new-page.html">New Page</a>
 
-<main class="site project-page">
-	<header class="header">
-		<h1><a href="index.html">imkas</a></h1>
-	</header>
-
-	<article class="project-detail">
-		<img class="hero-image" src="assets/projects/legendsrpg.png" alt="LegendsRPG">
-		<h2>LegendsRPG</h2>
-		<p>My RPG project.</p>
-
-		<div class="detail-links">
-			<a href="#"><img src="assets/github.png" alt=""> GitHub</a>
-			<a href="#"><img src="assets/discord.png" alt=""> Discord</a>
-		</div>
-
-		<h3>Screenshots</h3>
-		<div class="gallery">
-			<img src="assets/projects/legendsrpg.png" alt="LegendsRPG screenshot">
-			<img src="assets/projects/legendsrpg.png" alt="LegendsRPG screenshot">
-			<img src="assets/projects/legendsrpg.png" alt="LegendsRPG screenshot">
-		</div>
-	</article>
-</main>
-</body>
-</html>
+to that menu in each HTML file.
