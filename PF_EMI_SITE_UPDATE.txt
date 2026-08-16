@@ -1,0 +1,20 @@
+PF-EMI WEBSITE UPDATE
+
+Upload/replace these files in the root of your landingpage repository:
+- index.html
+- legendsrpg.html
+- projectflint.html
+- flint-quests.html
+- pf-emi.html
+- about.html
+- privacy.html
+- style.css
+
+No new local image files are required.
+The PF-EMI page uses the regular EMI interface screenshot and EMI icon remotely,
+as requested.
+
+PF-EMI links:
+- GitHub: https://github.com/bostonstuddard/PF-EMI
+- Modrinth: https://modrinth.com/mod/pf-emi
+- CurseForge: https://www.curseforge.com/minecraft/mc-mods/pf-emi/preview

@@ -56,7 +56,7 @@ a {
 
 .projects {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(2, 1fr);
 	gap: 24px;
 }
 
@@ -109,6 +109,16 @@ a {
 		180deg,
 		rgba(155, 38, 215, 0.42) 0%,
 		rgba(90, 20, 135, 0.18) 22%,
+		rgba(0, 0, 0, 0) 58%
+	);
+}
+
+
+.project-card:nth-child(4)::before {
+	background: linear-gradient(
+		180deg,
+		rgba(230, 145, 35, 0.42) 0%,
+		rgba(145, 80, 20, 0.18) 22%,
 		rgba(0, 0, 0, 0) 58%
 	);
 }
